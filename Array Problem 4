@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.println("Enter the size of 1st array : ");
+        n = sc.nextInt();
+        int []arrA=new int[n];
+        System.out.println("Enter the elements of 1st array : ");
+        for(int i=0;i<n;++i){
+                
+                arrA[i]=sc.nextInt();
+        }
+         System.out.println("Enter the size of 2nd array : ");
+        n = sc.nextInt();
+        int []arrB=new int[n];
+        System.out.println("Enter the elements of 2nd array : ");
+        for(int i=0;i<n;++i){
+            arrB[i]=sc.nextInt();
+        }
+        
+        System.out.println(ArrayProblem(arrA,arrB)); 
+    }
+    public static String ArrayProblem(int []arrA,int []arrB){
+       int sumA =0;
+       int sumB =0;
+       for(int i=0;i<arrA.length;i++){
+           sumA+=arrA[i];
+       }
+       for(int j=0;j<arrB.length;j++){
+           sumB+=arrB[j];
+    }
+    if(sumA>sumB){
+        return "First array is larger";
+    }
+    else{
+        return "Second array is larger";
+    }
+}
+}
