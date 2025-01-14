@@ -3,10 +3,10 @@ import java.util.*;
 public class Main {
   static int[] calSum(int a[], int b[], int n, int m) {
     int maxLength = Math.max(n, m);
-    int[] ans = new int[maxLength + 1]; // +1 to handle any overflow carry
+    int[] ans = new int[maxLength + 1]; 
     int i = n - 1;
     int j = m - 1;
-    int k = maxLength; // Start filling from the end of the array
+    int k = maxLength;
     int carry = 0;
 
     while (k > 0) {
