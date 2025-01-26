@@ -1,0 +1,46 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void revArr(int [] arr,int start ,int end){
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void rotateArray(int[] arr, int k) {
+        int n = arr.length;
+           if(k>=n) k=k%n ;
+           if (k < 0) k += n;
+        revArr(arr,0,n-k-1);
+        revArr(arr,n-k,n-1);
+        revArr(arr,0,n-1);
+        
+    }
+
+  
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        int k = scanner.nextInt();
+
+        rotateArray(arr, k);
+        
+        for(int num : arr){
+            System.out.print(num + " "); 
+        }
+        
+        scanner.close();
+    }
+}
